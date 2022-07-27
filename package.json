@@ -1,0 +1,33 @@
+{
+  "type": "module",
+  "name": "santander-export-extension",
+  "version": "2.0.0",
+  "description": "Exporta uma fatura do cartão de crédito do Internet Banking Santander no formato OFX",
+  "main": "FileSaver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcacars/santander-export-extension.git"
+  },
+  "keywords": [
+    "santander",
+    "cartão",
+    "de",
+    "crédito",
+    "ofx",
+    "internet",
+    "banking",
+    "exportar"
+  ],
+  "author": "Gabriel Anderson <gcacars@gmail.com> (https://github.com/gcacars)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/gcacars/santander-export-extension/issues"
+  },
+  "homepage": "https://github.com/gcacars/santander-export-extension#readme",
+  "devDependencies": {
+    "webextension-polyfill": "^0.9.0"
+  }
+}

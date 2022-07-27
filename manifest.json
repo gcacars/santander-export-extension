@@ -1,21 +1,33 @@
 {
-  "name": "Santander Exporter",
-  "version": "1.0",
-  "description": "Build an Extenion!",
   "manifest_version": 2,
-  "browser_action": {
-    "default_icon": "icon.png"
-  },
+  "name": "Santander Exporter",
+  "version": "2.0",
+  "description": "Exporta uma fatura do cartão de crédito do Internet Banking Santander no formato OFX",
+  "homepage_url": "https://github.com/gcacars/santander-export-extension",
   "permissions": [
     "activeTab",
-    "tabs"
+    "notifications",
+    "downloads"
   ],
-  "background" : {
-    "persistent": false,
-    "scripts" : ["background.js"]
+  "page_action": {
+    "default_icon": "icons/icon.png",
+    "default_title": "Exportar OFX",
+    "browser_style": true,
+    "show_matches": ["https://*.santandernet.com.br/*"]
   },
-  "content_scripts" : [{
-            "matches" :  ["*://*/*"],
-            "js" : ["jquery.js", "FileSaver.js", "content.js"]
-  }]
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
+      "background.js"
+    ]
+  },
+  "content_scripts": [{
+    "matches": ["https://*.santandernet.com.br/*"]
+  }],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{466f60cb-2a88-441b-8ff7-19ddfe6b7747}"
+    }
+  }
 }
