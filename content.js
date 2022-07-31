@@ -65,8 +65,9 @@ function getContent() {
 
   console.log('Getting content...');
   const creditCardElement = document.querySelector('mfe-credit-card-payment-element').shadowRoot;
+  const activeTab = creditCardElement.querySelector('.ibsui-tab--content:not([hidden])');
 
-  creditCardElement.querySelectorAll('dss-list').forEach((el) => {
+  activeTab.querySelectorAll('dss-list').forEach((el) => {
     // check for new date
     if (el.previousElementSibling && el.previousElementSibling.classList.contains('expensesOfDay')) {
       const date = el.previousElementSibling.textContent.trim();
